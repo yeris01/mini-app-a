@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f5f0" />
+    <meta
+      name="description"
+      content="Convierte medidas de forma rápida y sencilla. Longitud, masa, temperatura, volumen y más."
+    />
+    <title>Cambio — Conversor de unidades</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Cambio, inicio">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span></span>
+          <span>cambio<span class="brand-period">.</span></span>
+        </a>
+        <div class="topbar-note"><span class="status-dot"></span> Conversión precisa, sin complicaciones</div>
+        <a class="api-link" href="/docs" target="_blank" rel="noreferrer">API <span aria-hidden="true">↗</span></a>
+      </header>
+
+      <main>
+        <section class="intro">
+          <div class="eyebrow"><span class="eyebrow-line"></span> UNA HERRAMIENTA PARA CADA MEDIDA</div>
+          <h1>Todo encaja<br />cuando <span>conviertes.</span></h1>
+          <p>Unidades distintas, una respuesta clara. Elige una categoría y deja que los números hagan lo suyo.</p>
+        </section>
+
+        <section class="workspace" aria-label="Conversor de unidades">
+          <nav class="category-panel" aria-label="Categorías de conversión">
+            <div class="panel-label">CATEGORÍAS</div>
+            <div id="category-list" class="category-list"></div>
+            <div class="panel-foot"><span>01</span><span>08 CATEGORÍAS</span></div>
+          </nav>
+
+          <div class="converter-panel">
+            <div class="converter-heading">
+              <div>
+                <div class="panel-label">CONVERSOR</div>
+                <h2 id="category-title">Longitud</h2>
+              </div>
+              <span class="precision-tag"><span aria-hidden="true">✳</span> PRECISO</span>
+            </div>
+
+            <div class="fields">
+              <label class="unit-card" for="source-value">
+                <span class="field-label">DE</span>
+                <span class="input-line">
+                  <input id="source-value" type="number" value="1" step="any" inputmode="decimal" aria-label="Valor a convertir" />
+                  <select id="source-unit" aria-label="Unidad de origen"></select>
+                </span>
+                <span id="source-unit-name" class="unit-name"></span>
+              </label>
+
+              <button id="swap-button" class="swap-button" type="button" aria-label="Intercambiar unidades">
+                <span aria-hidden="true">↕</span>
+              </button>
+
+              <div class="unit-card result-card">
+                <span class="field-label">A</span>
+                <div class="input-line result-line">
+                  <output id="result-value" for="source-value">—</output>
+                  <select id="target-unit" aria-label="Unidad de destino"></select>
+                </div>
+                <span id="target-unit-name" class="unit-name"></span>
+                <button id="copy-button" class="copy-button" type="button" aria-label="Copiar resultado" title="Copiar resultado">
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="7" y="7" width="9" height="10" rx="1.5"></rect><path d="M13 7V5.5A1.5 1.5 0 0 0 11.5 4h-6A1.5 1.5 0 0 0 4 5.5v7A1.5 1.5 0 0 0 5.5 14H7"></path></svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="result-meta">
+              <span id="conversion-summary" aria-live="polite">Escribe un valor para convertir</span>
+              <span id="conversion-status" class="conversion-status" role="status"></span>
+            </div>
+
+            <div class="converter-bottom">
+              <span class="live-indicator"><span class="status-dot"></span> ACTUALIZACIÓN EN VIVO</span>
+              <span>Los cálculos se realizan al instante</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="bottom-note" aria-label="Información">
+          <span class="note-icon" aria-hidden="true">↗</span>
+          <p><strong>Un pequeño dato:</strong> las conversiones de temperatura tienen en cuenta la escala, no solo el tamaño de la unidad.</p>
+          <span class="note-index">CAMBIO / 001</span>
+        </section>
+      </main>
+
+      <footer>
+        <span>HECHO PARA QUE TODO TENGA SENTIDO.</span>
+        <span>CAMBIO <span class="brand-period">©</span> 2025</span>
+      </footer>
+    </div>
+  </body>
+</html>
